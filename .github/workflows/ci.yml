@@ -1,0 +1,134 @@
+# GitHub Actions CI Pipeline
+# Shows passing/failing tests and code quality checks
+# Helps demonstrate the before/after state of workflows
+
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    name: Test Suite
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run tests
+      run: npm test
+      continue-on-error: true  # Don't fail the entire workflow
+    
+    - name: Generate test coverage
+      run: npm run test:coverage
+      continue-on-error: true
+    
+    - name: Upload coverage reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: coverage/
+      if: always()
+
+  lint:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run ESLint
+      run: npm run lint
+      continue-on-error: true  # Show warnings but don't block
+    
+    - name: Check Prettier formatting
+      run: npm run format:check
+      continue-on-error: true
+    
+    - name: TypeScript type checking
+      run: npm run type-check
+      continue-on-error: true
+
+  security:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run npm audit
+      run: npm audit
+      continue-on-error: true  # Show vulnerabilities but don't block
+    
+    - name: Check for known vulnerabilities
+      run: |
+        echo "🔍 Checking for known vulnerabilities..."
+        npm audit --json | jq '.vulnerabilities | length' || echo "0"
+      continue-on-error: true
+
+  summary:
+    name: Workflow Status Summary
+    runs-on: ubuntu-latest
+    needs: [test, lint, security]
+    if: always()
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Create status summary
+      run: |
+        echo "## 📊 Continue Workflows Demo - Status Report" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Current Issues (Fix these with workflows!)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "| Category | Status | Details |" >> $GITHUB_STEP_SUMMARY
+        echo "|----------|--------|---------|" >> $GITHUB_STEP_SUMMARY
+        echo "| 🐛 Bug | ❌ Failed | TypeError in api/users.ts |" >> $GITHUB_STEP_SUMMARY
+        echo "| 🧪 Tests | ⚠️ Incomplete | Missing tests for math utilities |" >> $GITHUB_STEP_SUMMARY
+        echo "| 🎨 Formatting | ⚠️ Issues | ESLint and Prettier violations |" >> $GITHUB_STEP_SUMMARY
+        echo "| 🔐 Security | 🔴 Vulnerable | Outdated lodash dependency |" >> $GITHUB_STEP_SUMMARY
+        echo "| 📝 Docs | 📉 Missing | No JSDoc in logger.ts |" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 🎯 Next Steps" >> $GITHUB_STEP_SUMMARY
+        echo "1. Fork this repository" >> $GITHUB_STEP_SUMMARY
+        echo "2. Open [Continue Hub](https://hub.continue.dev)" >> $GITHUB_STEP_SUMMARY
+        echo "3. Run workflows from WORKFLOWS.md" >> $GITHUB_STEP_SUMMARY
+        echo "4. Watch as PRs fix these issues automatically! 🚀" >> $GITHUB_STEP_SUMMARY
