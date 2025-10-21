@@ -4,7 +4,7 @@
  * Used for Workflow #1 - Bug Fixing
  */
 
-import { getUserById, getUserEmail, isAdmin, formatUserName } from '../api/users';
+import { getUserById, getUserEmail, isAdmin, formatUserName, getAllAdmins } from '../api/users';
 
 describe('Users API', () => {
   describe('getUserById', () => {
@@ -52,6 +52,27 @@ describe('Users API', () => {
     it('should format user name to uppercase', () => {
       const user = { id: 1, name: 'john doe', email: 'john@test.com', role: 'user' as const };
       expect(formatUserName(user)).toBe('JOHN DOE');
+    });
+  });
+
+  describe('getAllAdmins', () => {
+    it('should return all admin users', () => {
+      const admins = getAllAdmins();
+      expect(admins).toHaveLength(1);
+      expect(admins[0].name).toBe('Alice Johnson');
+      expect(admins[0].role).toBe('admin');
+    });
+
+    it('should return an array', () => {
+      const admins = getAllAdmins();
+      expect(Array.isArray(admins)).toBe(true);
+    });
+
+    it('should only return users with admin role', () => {
+      const admins = getAllAdmins();
+      admins.forEach(user => {
+        expect(user.role).toBe('admin');
+      });
     });
   });
 });
