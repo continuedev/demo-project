@@ -81,16 +81,16 @@ export function createLogger(prefix?: string, level?: LogLevel): Logger {
 // Missing JSDoc comment
 export function parseLogLevel(level: string): LogLevel {
   switch (level.toUpperCase()) {
-    case 'DEBUG':
-      return LogLevel.DEBUG;
-    case 'INFO':
-      return LogLevel.INFO;
-    case 'WARN':
-      return LogLevel.WARN;
-    case 'ERROR':
-      return LogLevel.ERROR;
-    default:
-      return LogLevel.INFO;
+  case 'DEBUG':
+    return LogLevel.DEBUG;
+  case 'INFO':
+    return LogLevel.INFO;
+  case 'WARN':
+    return LogLevel.WARN;
+  case 'ERROR':
+    return LogLevel.ERROR;
+  default:
+    return LogLevel.INFO;
   }
 }
 
