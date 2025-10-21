@@ -1,9 +1,9 @@
 # 🚀 Continue Hub Demo Repo
 
 Welcome to the **Continue Hub Sample Repo** 👋  
-Fork this repo, connect Continue to GitHub, and run your first workflows in under 5 minutes.  
+Fork this repo, connect Continue to GitHub, and run your first agent in under 5 minutes.  
 
-👉 [Learn about Workflows](https://docs.continue.dev/hub/workflows/intro)  
+👉 [Learn about agents](https://docs.continue.dev/hub/agents/intro)  
 👉 [Go to the Hub](https://hub.continue.dev/agents)
 
 ---
@@ -17,22 +17,22 @@ Fork this repo, connect Continue to GitHub, and run your first workflows in unde
 - Document functions
 - (Optional) Add a small feature
 
-Each of these is powered by a **Continue Workflow** — no setup required. Just fork, connect, and run a prompt.
+Each of these is powered by a **Continue Agent** — no setup required. Just fork, connect, and run a prompt.
 
 ---
 
 ## 🪄 How to Get Started
 
 1. **Fork** this repo to your GitHub account  
-2. **Open Continue Hub:** [hub.continue.dev](https://hub.continue.dev/agents)  
-3. **Connect GitHub**  
-4. Run any of the prompts from [`WORKFLOWS.md`](./WORKFLOWS.md)
+2. **Open Mission Control in the Continue Hub:** [hub.continue.dev](https://hub.continue.dev/agents)  
+3. **[Connect GitHub](https://hub.continue.dev/settings/integrations)**  
+4. Run any of the prompts from [`agents.md`](./agents.md)
 
 👉 In under 60 seconds, you’ll have a PR with code changes.
 
 ---
 
-## 🧰 Recommended Workflows
+## 🧰 Recommended agents
 
 | # | Task                    | Prompt Example                                                                                   | Expected Outcome                                     |
 |---|--------------------------|---------------------------------------------------------------------------------------------------|-----------------------------------------------------|
