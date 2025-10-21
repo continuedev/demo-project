@@ -4,7 +4,7 @@
  * Many functions are not tested, and edge cases are missing
  */
 
-import { add, subtract, multiply, divide, factorial, isPrime, average, findMax } from '../src/utils/math';
+import { add, subtract, divide, isPrime } from '../src/utils/math';
 
 describe('Math Utilities', () => {
   // Basic tests for add function
