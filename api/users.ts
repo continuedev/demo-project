@@ -64,3 +64,12 @@ export function formatUserName(user: User): string {
   return displayName
   // Missing semicolon above (for Prettier to fix)
 }
+
+/**
+ * Get all admin users
+ * Returns an array of all users with the 'admin' role
+ * @returns {User[]} Array of admin users
+ */
+export function getAllAdmins(): User[] {
+  return users.filter(user => user.role === 'admin');
+}
