@@ -54,7 +54,9 @@ module.exports = {
     '^.+\\.ts$': ['ts-jest', {
       tsconfig: {
         // Override some tsconfig settings for tests
-        strict: false // Be less strict in tests
+        strict: false, // Be less strict in tests
+        noUnusedLocals: false,
+        noUnusedParameters: false
       }
     }]
   }
