@@ -20,47 +20,34 @@ const users: User[] = [
 
 /**
  * Get user by ID
- * BUG: This function doesn't handle the case when user is not found
  */
-export function getUserById(id: number): User {
+export function getUserById(id: number): User | undefined {
   const user = users.find(u => u.id === id);
-  // TypeError will occur here when user is undefined
   return user;
 }
 
 /**
  * Get user's email
- * BUG: Accessing property on potentially undefined result
  */
-export function getUserEmail(userId: number): string {
+export function getUserEmail(userId: number): string | undefined {
   const user = getUserById(userId);
-  // This will throw TypeError if user doesn't exist
-  return user.email;
+  return user?.email;
 }
 
 /**
  * Check if user is admin
- * BUG: No null check before accessing role property
  */
 export function isAdmin(userId: number): boolean {
   const user = getUserById(userId);
-  // Another potential TypeError here
-  return user.role === 'admin';
+  return user?.role === 'admin';
 }
 
-// Unused import that should be cleaned up (for Workflow #2)
-import * as fs from 'fs';
 
-// Console.log that should be removed (for Workflow #2)
-console.log('Users API loaded');
 
 /**
  * Format user display name
- * Missing proper formatting and has inconsistent spacing
  */
 export function formatUserName(user: User): string {
-    // Inconsistent indentation (for ESLint to catch)
-    const displayName=user.name.toUpperCase();  // Missing spaces around =
-  return displayName
-  // Missing semicolon above (for Prettier to fix)
+  const displayName = user.name.toUpperCase();
+  return displayName;
 }
