@@ -67,14 +67,14 @@ export function factorial(n: number): number {
 export function isPrime(n: number): boolean {
   // Edge case: numbers less than 2 are not prime
   if (n < 2) return false;
-  
+
   // Check for divisibility up to square root of n
   for (let i = 2; i <= Math.sqrt(n); i++) {
     if (n % i === 0) {
       return false;
     }
   }
-  
+
   return true;
 }
 

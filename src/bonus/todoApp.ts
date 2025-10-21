@@ -20,7 +20,11 @@ export class TodoApp {
   /**
    * Add a new todo item
    */
-  addTodo(title: string, description?: string, priority: 'low' | 'medium' | 'high' = 'medium'): Todo {
+  addTodo(
+    title: string,
+    description?: string,
+    priority: 'low' | 'medium' | 'high' = 'medium'
+  ): Todo {
     const todo: Todo = {
       id: this.nextId++,
       title,
@@ -29,7 +33,7 @@ export class TodoApp {
       createdAt: new Date(),
       priority
     };
-    
+
     this.todos.push(todo);
     return todo;
   }
@@ -88,13 +92,13 @@ export class TodoApp {
 
   // FEATURE REQUEST: Add a method to mark all todos as completed
   // This is intentionally missing for users to implement via workflows
-  
+
   // FEATURE REQUEST: Add a method to get todos by priority
   // This is intentionally missing for users to implement via workflows
-  
+
   // FEATURE REQUEST: Add a method to update todo details
   // This is intentionally missing for users to implement via workflows
-  
+
   // FEATURE REQUEST: Add a method to clear all completed todos
   // This is intentionally missing for users to implement via workflows
 }

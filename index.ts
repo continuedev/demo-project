@@ -3,8 +3,8 @@
  * This file demonstrates how the various modules work together
  */
 
-import { getUserById, getUserEmail, isAdmin } from './api/users';
-import { add, subtract, multiply, divide } from './src/utils/math';
+import { getUserById, getUserEmail } from './api/users';
+import { add, multiply, divide } from './src/utils/math';
 import { createLogger } from './src/helpers/logger';
 import { TodoApp } from './src/bonus/todoApp';
 
@@ -16,7 +16,7 @@ logger.info('Testing Users API...');
 try {
   const user = getUserById(1);
   logger.info(`Found user: ${user.name}`);
-  
+
   // This will cause an error with non-existent user
   const email = getUserEmail(999);
   logger.info(`User email: ${email}`);

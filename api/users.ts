@@ -48,19 +48,13 @@ export function isAdmin(userId: number): boolean {
   return user.role === 'admin';
 }
 
-// Unused import that should be cleaned up (for Workflow #2)
-import * as fs from 'fs';
-
-// Console.log that should be removed (for Workflow #2)
-console.log('Users API loaded');
-
 /**
  * Format user display name
  * Missing proper formatting and has inconsistent spacing
  */
 export function formatUserName(user: User): string {
-    // Inconsistent indentation (for ESLint to catch)
-    const displayName=user.name.toUpperCase();  // Missing spaces around =
-  return displayName
+  // Inconsistent indentation (for ESLint to catch)
+  const displayName = user.name.toUpperCase(); // Missing spaces around =
+  return displayName;
   // Missing semicolon above (for Prettier to fix)
 }
