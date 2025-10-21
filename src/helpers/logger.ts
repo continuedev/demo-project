@@ -32,21 +32,21 @@ class Logger {
   }
 
   // Missing JSDoc comment
-  debug(message: string, ...args: any[]): void {
+  debug(message: string, ...args: unknown[]): void {
     if (this.shouldLog(LogLevel.DEBUG)) {
       console.log(this.formatMessage('DEBUG', message), ...args);
     }
   }
 
   // Missing JSDoc comment
-  info(message: string, ...args: any[]): void {
+  info(message: string, ...args: unknown[]): void {
     if (this.shouldLog(LogLevel.INFO)) {
       console.info(this.formatMessage('INFO', message), ...args);
     }
   }
 
   // Missing JSDoc comment
-  warn(message: string, ...args: any[]): void {
+  warn(message: string, ...args: unknown[]): void {
     if (this.shouldLog(LogLevel.WARN)) {
       console.warn(this.formatMessage('WARN', message), ...args);
     }
@@ -81,16 +81,16 @@ export function createLogger(prefix?: string, level?: LogLevel): Logger {
 // Missing JSDoc comment
 export function parseLogLevel(level: string): LogLevel {
   switch (level.toUpperCase()) {
-    case 'DEBUG':
-      return LogLevel.DEBUG;
-    case 'INFO':
-      return LogLevel.INFO;
-    case 'WARN':
-      return LogLevel.WARN;
-    case 'ERROR':
-      return LogLevel.ERROR;
-    default:
-      return LogLevel.INFO;
+  case 'DEBUG':
+    return LogLevel.DEBUG;
+  case 'INFO':
+    return LogLevel.INFO;
+  case 'WARN':
+    return LogLevel.WARN;
+  case 'ERROR':
+    return LogLevel.ERROR;
+  default:
+    return LogLevel.INFO;
   }
 }
 

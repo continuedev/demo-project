@@ -4,7 +4,7 @@
  * Users can add these via workflows
  */
 
-import { TodoApp, Todo } from '../src/bonus/todoApp';
+import { TodoApp } from '../src/bonus/todoApp';
 
 describe('TodoApp', () => {
   let app: TodoApp;
@@ -94,10 +94,10 @@ describe('TodoApp', () => {
   describe('getIncompleteTodos', () => {
     it('should return only incomplete todos', () => {
       const todo1 = app.addTodo('Incomplete 1');
-      const todo2 = app.addTodo('Complete me');
+      const _todo2 = app.addTodo('Complete me');
       const todo3 = app.addTodo('Incomplete 2');
       
-      app.completeTodo(todo2.id);
+      app.completeTodo(_todo2.id);
       
       const incomplete = app.getIncompleteTodos();
       
@@ -109,7 +109,7 @@ describe('TodoApp', () => {
   describe('getCompletedTodos', () => {
     it('should return only completed todos', () => {
       const todo1 = app.addTodo('Todo 1');
-      const todo2 = app.addTodo('Todo 2');
+      app.addTodo('Todo 2');
       const todo3 = app.addTodo('Todo 3');
       
       app.completeTodo(todo1.id);

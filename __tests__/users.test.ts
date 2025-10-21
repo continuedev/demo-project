@@ -11,7 +11,7 @@ describe('Users API', () => {
     it('should return a user when given a valid ID', () => {
       const user = getUserById(1);
       expect(user).toBeDefined();
-      expect(user.name).toBe('Alice Johnson');
+      expect(user?.name).toBe('Alice Johnson');
     });
 
     // This test will FAIL due to the bug!
