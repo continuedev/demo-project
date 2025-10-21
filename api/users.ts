@@ -48,11 +48,9 @@ export function isAdmin(userId: number): boolean {
   return user.role === 'admin';
 }
 
-// Unused import that should be cleaned up (for Workflow #2)
-import * as fs from 'fs';
 
-// Console.log that should be removed (for Workflow #2)
-console.log('Users API loaded');
+
+
 
 /**
  * Format user display name

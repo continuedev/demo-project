@@ -3,8 +3,8 @@
  * This file demonstrates how the various modules work together
  */
 
-import { getUserById, getUserEmail, isAdmin } from './api/users';
-import { add, subtract, multiply, divide } from './src/utils/math';
+import { getUserById, getUserEmail } from './api/users';
+import { add, multiply, divide } from './src/utils/math';
 import { createLogger } from './src/helpers/logger';
 import { TodoApp } from './src/bonus/todoApp';
 

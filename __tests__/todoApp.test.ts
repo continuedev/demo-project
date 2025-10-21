@@ -4,7 +4,7 @@
  * Users can add these via workflows
  */
 
-import { TodoApp, Todo } from '../src/bonus/todoApp';
+import { TodoApp } from '../src/bonus/todoApp';
 
 describe('TodoApp', () => {
   let app: TodoApp;
@@ -109,7 +109,7 @@ describe('TodoApp', () => {
   describe('getCompletedTodos', () => {
     it('should return only completed todos', () => {
       const todo1 = app.addTodo('Todo 1');
-      const todo2 = app.addTodo('Todo 2');
+      app.addTodo('Todo 2');
       const todo3 = app.addTodo('Todo 3');
       
       app.completeTodo(todo1.id);
