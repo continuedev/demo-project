@@ -1,6 +1,6 @@
 # 🚀 Continue Agents - Ready-to-Use Prompts
 
-Copy and paste these prompts directly into [Mission Control in the Continue Hub](https://hub.continue.dev/agents) to test different Agents. Be sure to select your fork of this repository and the branch you want the Agent to use. Each prompt is designed to demonstrate a specific capability of Continue Agents.
+Copy and paste these prompts directly into [Mission Control in the Continue Hub](https://hub.continue.dev/agents) to test different Agents. Be sure to select your fork of this repository and the branch you want the Agent to use. Each prompt is designed to demonstrate a specific capability of Continue Agents, but they aren't limited to these use cases. Remember, Agents can be customized with rules, tools, prompts and more and can be shared with your team.
 
 <img width="895" height="349" alt="Mission-control" src="https://github.com/user-attachments/assets/01026dac-d663-4868-a297-5c1788da4611" />
 
@@ -180,4 +180,4 @@ Once you've completed the basic Agent tasks, create agents to solve your own tas
 
 ---
 
-**Remember:** These prompts are starting points. Feel free to modify them or create your own!
+**Remember:** These prompts are starting points. Feel free to remix them or create your own!
