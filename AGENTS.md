@@ -1,10 +1,12 @@
-# 🚀 Continue Workflows - Ready-to-Use Prompts
+# 🚀 Continue Agents - Ready-to-Use Prompts
 
-Copy and paste these prompts directly into Continue Hub to test different workflows. Each prompt is designed to demonstrate a specific capability of Continue Workflows.
+Copy and paste these prompts directly into [Mission Control in the Continue Hub](https://hub.continue.dev/agents) to test different Agents. Be sure to select your fork of this repository and the branch you want the Agent to use. Each prompt is designed to demonstrate a specific capability of Continue Agents.
+
+<img width="895" height="349" alt="Mission-control" src="https://github.com/user-attachments/assets/01026dac-d663-4868-a297-5c1788da4611" />
 
 ---
 
-## 1. 🐛 Bug Fixing Workflow
+## 1. 🐛 Bug Fixing Agent
 
 **The "Wow" Moment - Fix a TypeError in <60 seconds**
 
@@ -43,7 +45,7 @@ Remove all unused imports and variables from the codebase
 
 ---
 
-## 3. 🔐 Security Check Workflow
+## 3. 🔐 Security Check Agent
 
 **Find and fix security vulnerabilities**
 
@@ -63,7 +65,7 @@ Check for the vulnerable lodash version in package.json and update it to the lat
 
 ---
 
-## 4. 🧪 Test Generation Workflow
+## 4. 🧪 Test Generation Agent
 
 **Write comprehensive tests**
 
@@ -87,7 +89,7 @@ Write tests that achieve 100% code coverage for src/utils/math.ts
 
 ---
 
-## 5. 📝 Documentation Generation Workflow
+## 5. 📝 Documentation Generation Agent
 
 **Add comprehensive documentation**
 
@@ -111,7 +113,7 @@ Add inline documentation explaining what each method does in the Logger class
 
 ---
 
-## 6. 🎯 Combined Workflows
+## 6. 🎯 Combined Agents
 
 **Fix multiple issues at once**
 
@@ -148,37 +150,18 @@ Add a new function 'getAllAdmins' to api/users.ts that returns all users with ad
 
 1. **Start simple:** Try the bug fix first (#1) for immediate satisfaction
 2. **Be specific:** The more detailed your prompt, the better the result
-3. **Combine tasks:** Workflows can handle multiple related tasks
+3. **Combine tasks:** Agents can handle multiple related tasks
 4. **Check the PR:** Always review the generated pull request
 5. **Iterate:** If the first result isn't perfect, refine your prompt
 
 ---
 
-## 🧪 Testing Your Workflows
 
-After running a workflow, verify the results:
-
-```bash
-# Run tests
-npm test
-
-# Check lint status
-npm run lint
-
-# Check security
-npm audit
-
-# Check test coverage
-npm run test:coverage
-```
-
----
-
-## 📊 Workflow Success Checklist
+## 📊 Agent Success Checklist
 
 Track your progress:
 
-- [ ] Bug Fix Workflow - TypeError fixed
+- [ ] Bug Fix Agent - TypeError fixed
 - [ ] Code Cleanup - 0 lint warnings
 - [ ] Security Check - 0 vulnerabilities  
 - [ ] Test Generation - >80% coverage
@@ -187,14 +170,13 @@ Track your progress:
 
 ---
 
-## 🎯 Challenge Mode
+## 🎯 Next Steps
 
-Once you've completed the basic workflows, try these advanced challenges:
+Once you've completed the basic Agent tasks, create agents to solve your own tasks:
 
-1. **The One-Shot:** Fix all issues with a single prompt
-2. **The Customizer:** Add your own bug and fix it
-3. **The Optimizer:** Improve performance of existing functions
-4. **The Refactorer:** Convert callbacks to async/await
+1. **[Create Your Own Agent](https://docs.continue.dev/hub/agents/intro#quickstart)**: You've used your default agent. Now it's time to build your own.
+2. **[Test an Agent from the Hub](https://hub.continue.dev/?type=agents)**: Use premade agents to complete your tasks.
+   
 
 ---
 
